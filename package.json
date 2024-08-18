@@ -1,0 +1,21 @@
+{
+  "name": "algorithms-project-69",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/WinterWind132/algorithms-project-69/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/WinterWind132/algorithms-project-69/actions)",
+  "main": "index.js",
+  "scripts": {
+  "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "jest": "^29.7.0"
+  }
+}
