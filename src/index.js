@@ -1,19 +1,17 @@
-function processText(text) {
-  const cleanedText = text.replace(/[^\w\s]/g, ' ').toLowerCase();
-  return cleanedText;
-}
+import processText from './textProcessing';
 
 export default function search(documents, query) {
   const processedQuery = processText(query).trim();
-  console.log('Processed Query:', processedQuery);
-  const queryRegex = new RegExp(`\\b${processedQuery}\\b`, 'i');
-  console.log('Query Regex:', queryRegex);
-  return documents
-    .filter(doc => {
-      const processedText = processText(doc.text);
-      console.log('Processed Text:', processedText);
-      console.log('Test Result:', queryRegex.test(processedText));
-      return queryRegex.test(processedText);
+  const queryRegex = new RegExp(`\\b${processedQuery}\\b`, 'gi');
+
+  const results = documents
+    .map(doc => {
+      const matches = (doc.text.match(queryRegex) || []).length;
+      return { id: doc.id, matches };
     })
-    .map(doc => doc.id);
+    .filter(result => result.matches > 0)
+    .sort((a, b) => b.matches - a.matches)
+    .map(result => result.id);
+
+  return results;
 }
