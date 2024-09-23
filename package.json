@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/WinterWind132/algorithms-project-69/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/WinterWind132/algorithms-project-69/actions)",
   "main": "index.js",
+  "type": "module",
   "jest": {
     "transform": {
       "^.+\\.js$": "babel-jest"
